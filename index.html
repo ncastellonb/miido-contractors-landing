@@ -1396,9 +1396,9 @@
       </a>
 
       <div class="nav__links">
-        <a href="#que-hacemos" class="nav__link">¿Qué hacemos?</a>
-        <a href="#como" class="nav__link">¿Cómo funciona?</a>
-        <a href="#waitlist" class="nav__link">Lista de espera</a>
+        <a href="#que-hacemos" class="nav__link" data-i18n="nav.que">¿Qué hacemos?</a>
+        <a href="#como" class="nav__link" data-i18n="nav.como">¿Cómo funciona?</a>
+        <a href="#waitlist" class="nav__link" data-i18n="nav.waitlist">Lista de espera</a>
       </div>
 
       <div class="nav__right">
@@ -1406,7 +1406,7 @@
           <button class="lang-toggle__btn lang-toggle__btn--active">ES</button>
           <button class="lang-toggle__btn">EN</button>
         </div>
-        <a href="#waitlist" class="btn-outline">Inscribirme</a>
+        <a href="#waitlist" class="btn-outline" data-i18n="nav.cta">Inscribirme</a>
       </div>
     </div>
   </nav>
@@ -1418,23 +1418,23 @@
 
       <div class="hero__content">
 
-        <h1 class="hero__headline reveal">
+        <h1 class="hero__headline reveal" data-i18n-html="hero.headline">
           El <span class="hero__highlight">contratista agrícola</span> que
           opera tu campo <span class="hero__highlight">todo el año</span>.
           <br>Formal, medible, sin sorpresas.
         </h1>
 
-        <p class="hero__sub reveal reveal-delay-1">
+        <p class="hero__sub reveal reveal-delay-1" data-i18n="hero.sub">
           Desde plantación hasta packing. Cuadrillas agrícolas formales,
           productividad visible en tiempo real y cumplimiento laboral bajo Ley 20.123.
         </p>
 
         <div class="hero__actions reveal reveal-delay-2">
-          <a href="#waitlist" class="btn-primary btn-primary--lg">
+          <a href="#waitlist" class="btn-primary btn-primary--lg" data-i18n="hero.cta1">
             Inscríbete a la lista de espera
           </a>
 
-          <a href="#como" class="btn-secondary">
+          <a href="#como" class="btn-secondary" data-i18n="hero.cta2">
             Ver cómo funciona
           </a>
         </div>
@@ -1468,10 +1468,10 @@
       <div class="section-head reveal">
         <div class="section-step">
           <span class="section-step__num">1</span>
-          Qué hacemos
+          <span data-i18n="s1.step">Qué hacemos</span>
         </div>
-        <h2 class="section-title">Un contratista para toda la temporada,<br/>no solo para cosecha</h2>
-        <p class="section-sub">Cobertura completa. Un solo proveedor. Sin buscar cuadrilla cada vez que cambia la faena.</p>
+        <h2 class="section-title" data-i18n-html="s1.title">Un contratista para toda la temporada,<br/>no solo para cosecha</h2>
+        <p class="section-sub" data-i18n="s1.sub">Cobertura completa. Un solo proveedor. Sin buscar cuadrilla cada vez que cambia la faena.</p>
       </div>
 
       <div class="blocks reveal reveal-delay-1">
@@ -1480,8 +1480,8 @@
           <div class="block__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="M5 10c0 4 3 7 7 7s7-3 7-7"/><path d="M12 17v5"/><path d="M8 22h8"/></svg>
           </div>
-          <h3 class="block__title">Cubrimos toda la temporada</h3>
-          <p class="block__body">
+          <h3 class="block__title" data-i18n="s1.b1.title">Cubrimos toda la temporada</h3>
+          <p class="block__body" data-i18n-html="s1.b1.body">
             <strong>Plantación, poda, raleo, amarra, deshoje, cosecha y packing.</strong>
             No aparecemos en cosecha y desaparecemos el resto del año. Somos tu contratista los 12 meses.
           </p>
@@ -1491,8 +1491,8 @@
           <div class="block__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
           </div>
-          <h3 class="block__title">Empleador formal</h3>
-          <p class="block__body">
+          <h3 class="block__title" data-i18n="s1.b2.title">Empleador formal</h3>
+          <p class="block__body" data-i18n-html="s1.b1.body">
             <strong>EST inscrita bajo Ley 20.123.</strong>
             Cotizaciones pagadas. F30-1 limpio. Tu riesgo laboral subsidiario queda cubierto.
           </p>
@@ -1502,8 +1502,8 @@
           <div class="block__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 6-6"/></svg>
           </div>
-          <h3 class="block__title">Operación con data</h3>
-          <p class="block__body">
+          <h3 class="block__title" data-i18n="s1.b3.title">Operación con data</h3>
+          <p class="block__body" data-i18n-html="s1.b1.body">
             <strong>Productividad real, en tiempo real.</strong>
             Kg/HH, ha/día, rendimiento por cuadrilla. No planillas. No estimaciones. No excusas.
           </p>
@@ -1888,14 +1888,6 @@
       });
     });
 
-    // Lang toggle
-    document.querySelectorAll('.lang-toggle__btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.lang-toggle__btn').forEach(b => b.classList.remove('lang-toggle__btn--active'));
-        btn.classList.add('lang-toggle__btn--active');
-      });
-    });
-
     // Formulario ahora es un iframe de Notion — no requiere JS adicional
   </script>
 
@@ -1909,6 +1901,360 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+(function() {
+  const en = {
+    nav: { que: 'What we do', como: 'How it works', waitlist: 'Waitlist', cta: 'Sign up' },
+    hero: {
+      headline: 'The <span class="hero__highlight">agricultural contractor</span> that runs your farm <span class="hero__highlight">year-round</span>.<br>Formal, measurable, no surprises.',
+      sub: 'From planting to packing. Formal agricultural crews, real-time productivity visibility and labor compliance under Chilean Law 20.123.',
+      cta1: 'Join the waitlist',
+      cta2: 'See how it works'
+    },
+    s1: {
+      step: 'What we do',
+      title: 'One contractor for the whole season,<br/>not just for harvest',
+      sub: 'Full coverage. One provider. No scrambling for crews every time the task changes.',
+      blocks: [
+        { title: 'We cover the full season', body: '<strong>Planting, pruning, thinning, tying, defoliation, harvest and packing.</strong> We don\'t show up at harvest and disappear the rest of the year. We\'re your contractor all 12 months.' },
+        { title: 'Formal employer', body: '<strong>Registered labor services company under Law 20.123.</strong> Social security paid. Clean F30-1. Your subsidiary labor risk is covered.' },
+        { title: 'Data-driven operations', body: '<strong>Real productivity, in real time.</strong> Kg/man-hour, ha/day, performance by crew. No spreadsheets. No estimates. No excuses.' }
+      ]
+    },
+    s2: {
+      step: 'Why it matters',
+      lead: 'The problem isn\'t finding people. It\'s relying on a contractor <em>with no visibility or backing.</em>',
+      desc: 'When the F30-1 isn\'t up to date, the subsidiary labor risk falls on the farm owner. When there\'s no data, there\'s no way to demand productivity.',
+      cta: 'Join the waitlist',
+      bullets: [
+        { title: 'Subsidiary labor risk covered', desc: 'If the contractor doesn\'t pay social security, the farm owner pays. With MIIDO, that risk disappears.' },
+        { title: 'Visible productivity', desc: 'See kg/man-hour and ha/day on your dashboard. No waiting for Monday\'s report.' },
+        { title: 'Clean and verifiable F30-1', desc: 'You can check it anytime. We keep it up to date.' },
+        { title: 'One provider all year', desc: 'You don\'t manage five different contractors for five different tasks.' }
+      ]
+    },
+    s3: {
+      step: 'WhatsApp Alerts',
+      lead: 'When there\'s an opening, workers find out instantly.',
+      desc: 'No more half-assembled crews. When a job opens in their area, each agricultural worker receives the offer directly on WhatsApp. They confirm with one click. You see the full team in real time.',
+      cta: 'Join the waitlist',
+      features: [
+        { title: 'Notification by area and crop', desc: 'Only workers nearby with experience in the task are notified.' },
+        { title: 'One-click confirmation', desc: 'The worker replies "I\'m interested" and is enrolled. No paperwork, no calls.' },
+        { title: 'Crews assembled faster', desc: 'From 3 days to 30 minutes. While you fill a spreadsheet, we already have the team.' }
+      ],
+      notif: { title: '+12 workers confirmed', sub: 'in the last 8 minutes' }
+    },
+    s4: {
+      step: 'How we do it',
+      title: 'Technology in the field,<br/>visibility on your desk',
+      cards: [
+        { title: 'Crew App', body: 'Field tracking. Attendance, performance and task per worker, in real time.' },
+        { title: 'Client Dashboard', body: 'Real productivity by task, crew and day. Access from any device.' },
+        { title: 'Social Security Integration', body: 'Social security contributions and labor documents managed automatically. Frictionless compliance.' },
+        { title: 'AI Planning', body: 'Crew assignment based on task, weather and historical performance each season.' }
+      ]
+    },
+    s5: {
+      step: 'Waitlist',
+      title: 'Sign up now.<br/>We\'ll contact you when we open in your area.',
+      desc: 'We\'re opening spots by region and crop type. Fill out the form and you\'re on the list. No commitment.',
+      trust: ['No sign-up cost', 'We contact you directly when we open spots', 'Your data is not shared with third parties'],
+      formTitle: 'Fill out the form and<br/>you\'re on the list.',
+      formDesc: 'Takes less than 2 minutes. No commitment.<br/>We\'ll contact you when we open spots in your area.',
+      formBtn: 'Join the waitlist',
+      badges: ['Secure data', '2 min', 'No cost']
+    },
+    footer: { email: 'nicolas@miido.ai', city: 'Santiago, Chile', privacy: 'Privacy policy' },
+    fab: 'Talk to us!'
+  };
+
+  let originals = null;
+
+  function saveOriginals() {
+    if (originals) return;
+    originals = {
+      nav: {},
+      hero: {},
+      s1: { blocks: [] },
+      s2: { bullets: [] },
+      s3: { features: [], notif: {} },
+      s4: { cards: [] },
+      s5: { trust: [], badges: [] },
+      footer: {},
+      fab: ''
+    };
+    const q = s => document.querySelector(s);
+    const qa = s => document.querySelectorAll(s);
+
+    qa('[data-i18n]').forEach(el => { originals.nav[el.getAttribute('data-i18n')] = el.textContent.trim(); });
+    qa('[data-i18n-html]').forEach(el => { originals.nav[el.getAttribute('data-i18n-html')] = el.innerHTML; });
+
+    originals.hero.sub = q('.hero__sub')?.textContent.trim();
+    originals.hero.headline = q('.hero__headline')?.innerHTML;
+
+    qa('.block__title').forEach((el, i) => originals.s1.blocks[i] = { title: el.textContent.trim() });
+    qa('.block__body').forEach((el, i) => { if (originals.s1.blocks[i]) originals.s1.blocks[i].body = el.innerHTML; });
+
+    const porQueSection = q('.por-que');
+    if (porQueSection) {
+      const steps = porQueSection.querySelectorAll('.section-step');
+      if (steps[0]) {
+        const textNodes = [];
+        steps[0].childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) textNodes.push(n); });
+        originals.s2.stepText = textNodes[0]?.textContent.trim();
+      }
+      originals.s2.lead = q('.por-que__lead')?.innerHTML;
+      originals.s2.desc = q('.por-que__desc')?.textContent.trim();
+      originals.s2.cta = porQueSection.querySelector('.btn-primary')?.textContent.trim();
+    }
+
+    qa('.bullet__text').forEach((el, i) => {
+      originals.s2.bullets[i] = {
+        title: el.querySelector('strong')?.textContent.trim(),
+        desc: el.querySelector('span')?.textContent.trim()
+      };
+    });
+
+    const alertasSection = q('.alertas');
+    if (alertasSection) {
+      const steps = alertasSection.querySelectorAll('.section-step');
+      if (steps[0]) {
+        const textNodes = [];
+        steps[0].childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) textNodes.push(n); });
+        originals.s3.stepText = textNodes[0]?.textContent.trim();
+      }
+      originals.s3.lead = q('.alertas__lead')?.textContent.trim();
+      originals.s3.desc = q('.alertas__desc')?.textContent.trim();
+      originals.s3.cta = alertasSection.querySelector('.btn-primary')?.textContent.trim();
+    }
+
+    qa('.alertas__feature').forEach((el, i) => {
+      const div = el.querySelector('div:last-child');
+      originals.s3.features[i] = {
+        title: div?.querySelector('strong')?.textContent.trim(),
+        desc: div?.querySelector('span')?.textContent.trim()
+      };
+    });
+
+    const notifText = q('.phone__notif-text');
+    if (notifText) {
+      originals.s3.notif.title = notifText.querySelector('strong')?.textContent.trim();
+      originals.s3.notif.sub = notifText.querySelector('span')?.textContent.trim();
+    }
+
+    const comoSection = q('#como');
+    if (comoSection) {
+      const steps = comoSection.querySelectorAll('.section-step');
+      if (steps[0]) {
+        const textNodes = [];
+        steps[0].childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) textNodes.push(n); });
+        originals.s4.stepText = textNodes[0]?.textContent.trim();
+      }
+      originals.s4.title = comoSection.querySelector('.section-title')?.innerHTML;
+    }
+
+    qa('.como__card').forEach((el, i) => {
+      originals.s4.cards[i] = {
+        title: el.querySelector('.como__title')?.textContent.trim(),
+        body: el.querySelector('.como__body')?.textContent.trim()
+      };
+    });
+
+    const waitlistSection = q('#waitlist');
+    if (waitlistSection) {
+      const steps = waitlistSection.querySelectorAll('.section-step');
+      if (steps[0]) {
+        const textNodes = [];
+        steps[0].childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) textNodes.push(n); });
+        originals.s5.stepText = textNodes[0]?.textContent.trim();
+      }
+    }
+    originals.s5.title = q('.waitlist__title')?.innerHTML;
+    originals.s5.desc = q('.waitlist__desc')?.textContent.trim();
+    qa('.trust-item').forEach((el, i) => {
+      const svgEnd = el.querySelector('svg');
+      let text = '';
+      el.childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) text = n.textContent.trim(); });
+      originals.s5.trust[i] = text;
+    });
+    originals.s5.formTitle = q('.form-cta__title')?.innerHTML;
+    originals.s5.formDesc = q('.form-cta__desc')?.innerHTML;
+    originals.s5.formBtn = q('.form-cta__btn')?.textContent.trim();
+    qa('.form-cta__badge').forEach((el, i) => {
+      let text = '';
+      el.childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) text = n.textContent.trim(); });
+      originals.s5.badges[i] = text;
+    });
+
+    const footerMeta = q('.footer__meta');
+    if (footerMeta) {
+      const divs = footerMeta.querySelectorAll('div');
+      originals.footer.email = divs[0]?.textContent.trim();
+      originals.footer.city = divs[1]?.textContent.trim();
+      originals.footer.privacy = footerMeta.querySelector('a')?.textContent.trim();
+    }
+    originals.fab = q('.fab span')?.textContent.trim();
+  }
+
+  function setStepText(stepEl, text) {
+    stepEl.childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) n.textContent = ' ' + text; });
+  }
+
+  function setTrustOrBadge(el, text) {
+    el.childNodes.forEach(n => { if (n.nodeType === 3 && n.textContent.trim()) n.textContent = '\n              ' + text + '\n            '; });
+  }
+
+  function applyLang(lang) {
+    saveOriginals();
+    const isEn = lang === 'en';
+    const q = s => document.querySelector(s);
+    const qa = s => document.querySelectorAll(s);
+
+    document.documentElement.lang = isEn ? 'en' : 'es';
+
+    qa('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const parts = key.split('.');
+      if (isEn) {
+        let val = en;
+        for (const p of parts) { val = val?.[p]; }
+        if (val) el.textContent = val;
+      } else {
+        if (originals.nav[key]) el.textContent = originals.nav[key];
+      }
+    });
+
+    qa('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      const parts = key.split('.');
+      if (isEn) {
+        let val = en;
+        for (const p of parts) { val = val?.[p]; }
+        if (val) el.innerHTML = val;
+      } else {
+        if (originals.nav[key]) el.innerHTML = originals.nav[key];
+      }
+    });
+
+    qa('.block__title').forEach((el, i) => {
+      el.textContent = isEn ? en.s1.blocks[i]?.title : originals.s1.blocks[i]?.title;
+    });
+    qa('.block__body').forEach((el, i) => {
+      el.innerHTML = isEn ? en.s1.blocks[i]?.body : originals.s1.blocks[i]?.body;
+    });
+
+    const porQueSection = q('.por-que');
+    if (porQueSection) {
+      const step = porQueSection.querySelector('.section-step');
+      if (step) setStepText(step, isEn ? en.s2.step : originals.s2.stepText);
+      const lead = q('.por-que__lead');
+      if (lead) lead.innerHTML = isEn ? en.s2.lead : originals.s2.lead;
+      const desc = q('.por-que__desc');
+      if (desc) desc.textContent = isEn ? en.s2.desc : originals.s2.desc;
+      const cta = porQueSection.querySelector('.btn-primary');
+      if (cta) cta.textContent = isEn ? en.s2.cta : originals.s2.cta;
+    }
+
+    qa('.bullet__text').forEach((el, i) => {
+      const data = isEn ? en.s2.bullets[i] : originals.s2.bullets[i];
+      if (data) {
+        el.querySelector('strong').textContent = data.title;
+        el.querySelector('span').textContent = data.desc;
+      }
+    });
+
+    const alertasSection = q('.alertas');
+    if (alertasSection) {
+      const step = alertasSection.querySelector('.section-step');
+      if (step) setStepText(step, isEn ? en.s3.step : originals.s3.stepText);
+      const lead = q('.alertas__lead');
+      if (lead) lead.textContent = isEn ? en.s3.lead : originals.s3.lead;
+      const desc = q('.alertas__desc');
+      if (desc) desc.textContent = isEn ? en.s3.desc : originals.s3.desc;
+      const cta = alertasSection.querySelector('.btn-primary');
+      if (cta) cta.textContent = isEn ? en.s3.cta : originals.s3.cta;
+    }
+
+    qa('.alertas__feature').forEach((el, i) => {
+      const data = isEn ? en.s3.features[i] : originals.s3.features[i];
+      if (data) {
+        const div = el.querySelector('div:last-child');
+        div.querySelector('strong').textContent = data.title;
+        div.querySelector('span').textContent = data.desc;
+      }
+    });
+
+    const notifText = q('.phone__notif-text');
+    if (notifText) {
+      const data = isEn ? en.s3.notif : originals.s3.notif;
+      notifText.querySelector('strong').textContent = data.title;
+      notifText.querySelector('span').textContent = data.sub;
+    }
+
+    const comoSection = q('#como');
+    if (comoSection) {
+      const step = comoSection.querySelector('.section-step');
+      if (step) setStepText(step, isEn ? en.s4.step : originals.s4.stepText);
+      const title = comoSection.querySelector('.section-title');
+      if (title) title.innerHTML = isEn ? en.s4.title : originals.s4.title;
+    }
+
+    qa('.como__card').forEach((el, i) => {
+      const data = isEn ? en.s4.cards[i] : originals.s4.cards[i];
+      if (data) {
+        el.querySelector('.como__title').textContent = data.title;
+        el.querySelector('.como__body').textContent = data.body;
+      }
+    });
+
+    const waitlistSection = q('#waitlist');
+    if (waitlistSection) {
+      const step = waitlistSection.querySelector('.section-step');
+      if (step) setStepText(step, isEn ? en.s5.step : originals.s5.stepText);
+    }
+    const wTitle = q('.waitlist__title');
+    if (wTitle) wTitle.innerHTML = isEn ? en.s5.title : originals.s5.title;
+    const wDesc = q('.waitlist__desc');
+    if (wDesc) wDesc.textContent = isEn ? en.s5.desc : originals.s5.desc;
+
+    qa('.trust-item').forEach((el, i) => {
+      const text = isEn ? en.s5.trust[i] : originals.s5.trust[i];
+      if (text) setTrustOrBadge(el, text);
+    });
+
+    const fTitle = q('.form-cta__title');
+    if (fTitle) fTitle.innerHTML = isEn ? en.s5.formTitle : originals.s5.formTitle;
+    const fDesc = q('.form-cta__desc');
+    if (fDesc) fDesc.innerHTML = isEn ? en.s5.formDesc : originals.s5.formDesc;
+    const fBtn = q('.form-cta__btn');
+    if (fBtn) fBtn.textContent = isEn ? en.s5.formBtn : originals.s5.formBtn;
+
+    qa('.form-cta__badge').forEach((el, i) => {
+      const text = isEn ? en.s5.badges[i] : originals.s5.badges[i];
+      if (text) setTrustOrBadge(el, text);
+    });
+
+    const footerMeta = q('.footer__meta');
+    if (footerMeta) {
+      const privacyLink = footerMeta.querySelector('a');
+      if (privacyLink) privacyLink.textContent = isEn ? en.footer.privacy : originals.footer.privacy;
+    }
+
+    const fabSpan = q('.fab span');
+    if (fabSpan) fabSpan.textContent = isEn ? en.fab : originals.fab;
+  }
+
+  document.querySelectorAll('.lang-toggle__btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-toggle__btn').forEach(b => b.classList.remove('lang-toggle__btn--active'));
+      btn.classList.add('lang-toggle__btn--active');
+      applyLang(btn.textContent.trim() === 'EN' ? 'en' : 'es');
+    });
+  });
+})();
 </script>
 </body>
 </html>
