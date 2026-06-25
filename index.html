@@ -51,6 +51,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
+    /* ============================================================ SCROLL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
     body {
       font-family: var(--font-sans);
       background: var(--background);
@@ -201,16 +216,30 @@
       border: none;
       border-radius: var(--radius);
       cursor: pointer;
-      transition: background 0.15s, transform 0.1s;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
       white-space: nowrap;
+      position: relative;
+      overflow: hidden;
     }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover::after { left: 100%; }
 
     .btn-primary:hover {
       background: #1e293b;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px -6px rgba(15,23,42,0.35);
     }
 
-    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:active { transform: translateY(0); box-shadow: none; }
 
     .btn-primary--lg {
       height: 56px;
@@ -219,6 +248,12 @@
     }
 
     /* ============================================================ HERO */
+    .hero {
+      position: relative;
+      padding: 80px 0 96px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(183,228,210,0.15) 0%, transparent 70%);
+    }
+
     .hero__grid {
   display: flex;
   justify-content: center;
@@ -281,12 +316,14 @@
       border: 1.5px solid var(--border);
       border-radius: var(--radius);
       cursor: pointer;
-      transition: border-color 0.15s, background 0.15s;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
     .btn-secondary:hover {
-      border-color: var(--foreground);
-      background: var(--muted);
+      border-color: var(--green-2);
+      background: rgba(45,122,102,0.04);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px -4px rgba(45,122,102,0.15);
     }
 
     .hero__note {
@@ -474,7 +511,17 @@
     .section-head { text-align: center; margin-bottom: 64px; }
 
     /* ============================================================ QUÉ HACEMOS */
-    .que-hacemos { background: var(--background); }
+    .que-hacemos {
+      background: var(--background);
+      position: relative;
+    }
+    .que-hacemos::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
 
     .blocks {
       display: grid;
@@ -487,13 +534,13 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 16px;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
     .block:hover {
       border-color: var(--green-2);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px -8px rgba(15,23,42,0.08);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -12px rgba(45,122,102,0.15);
     }
 
     .block__icon {
@@ -530,7 +577,9 @@
     }
 
     /* ============================================================ POR QUÉ IMPORTA */
-    .por-que { background: var(--muted); }
+    .por-que {
+      background: linear-gradient(180deg, var(--muted) 0%, #e8f5f0 100%);
+    }
 
     .por-que__grid {
       display: grid;
@@ -575,10 +624,14 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 12px;
-      transition: transform 0.15s;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     }
 
-    .bullet:hover { transform: translateX(2px); }
+    .bullet:hover {
+      transform: translateX(6px);
+      box-shadow: 0 8px 20px -6px rgba(15,23,42,0.1);
+      border-color: var(--green-2);
+    }
 
     .bullet__check {
       width: 22px;
@@ -614,10 +667,14 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 14px;
-      transition: border-color 0.2s;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
-    .como__card:hover { border-color: var(--green-2); }
+    .como__card:hover {
+      border-color: var(--green-2);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -10px rgba(45,122,102,0.12);
+    }
 
     .como__icon {
       width: 44px;
@@ -647,7 +704,17 @@
     }
 
     /* ============================================================ WAITLIST */
-    .waitlist { background: var(--muted); }
+    .waitlist {
+      background: linear-gradient(180deg, var(--muted) 0%, #e8f5f0 100%);
+      position: relative;
+    }
+    .waitlist::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
 
     .waitlist__grid {
       display: grid;
@@ -1351,18 +1418,18 @@
 
       <div class="hero__content">
 
-        <h1 class="hero__headline">
+        <h1 class="hero__headline reveal">
           El <span class="hero__highlight">contratista agrícola</span> que
           opera tu campo <span class="hero__highlight">todo el año</span>.
           <br>Formal, medible, sin sorpresas.
         </h1>
 
-        <p class="hero__sub">
+        <p class="hero__sub reveal reveal-delay-1">
           Desde plantación hasta packing. Cuadrillas agrícolas formales,
           productividad visible en tiempo real y cumplimiento laboral bajo Ley 20.123.
         </p>
 
-        <div class="hero__actions">
+        <div class="hero__actions reveal reveal-delay-2">
           <a href="#waitlist" class="btn-primary btn-primary--lg">
             Inscríbete a la lista de espera
           </a>
@@ -1398,7 +1465,7 @@
   <section class="que-hacemos" id="que-hacemos">
     <div class="container">
 
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="section-step">
           <span class="section-step__num">1</span>
           Qué hacemos
@@ -1407,7 +1474,7 @@
         <p class="section-sub">Cobertura completa. Un solo proveedor. Sin buscar cuadrilla cada vez que cambia la faena.</p>
       </div>
 
-      <div class="blocks">
+      <div class="blocks reveal reveal-delay-1">
 
         <div class="block">
           <div class="block__icon">
@@ -1449,7 +1516,7 @@
   <!-- =========================================================== POR QUÉ IMPORTA -->
   <section class="por-que">
     <div class="container">
-      <div class="por-que__grid">
+      <div class="por-que__grid reveal">
 
         <div>
           <div class="section-step">
@@ -1508,7 +1575,7 @@
   <!-- =========================================================== ALERTAS WHATSAPP -->
   <section class="alertas" id="alertas">
     <div class="container">
-      <div class="alertas__grid">
+      <div class="alertas__grid reveal">
 
         <div>
           <div class="section-step">
@@ -1655,7 +1722,7 @@
   <section id="como">
     <div class="container">
 
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="section-step">
           <span class="section-step__num">4</span>
           Cómo lo hacemos
@@ -1663,7 +1730,7 @@
         <h2 class="section-title">Tecnología en terreno,<br/>visibilidad en tu escritorio</h2>
       </div>
 
-      <div class="como__grid">
+      <div class="como__grid reveal reveal-delay-1">
 
         <div class="como__card">
           <div class="como__icon">
@@ -1704,7 +1771,7 @@
   <!-- =========================================================== WAITLIST -->
   <section class="waitlist" id="waitlist">
     <div class="container">
-      <div class="waitlist__grid">
+      <div class="waitlist__grid reveal">
 
         <div>
           <div class="section-step">
@@ -1832,5 +1899,16 @@
     // Formulario ahora es un iframe de Notion — no requiere JS adicional
   </script>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
